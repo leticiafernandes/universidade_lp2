@@ -8,7 +8,8 @@
  	<link rel="stylesheet" type="text/css" href="./resources/bootstrap/css/bootstrap-theme.min.css" />
 </head>
 <body>
-
+	<%@ include file="./layout.jsp"%>
+	
 	<!-- Inicio Modal Professor ou Aluno -->
 	<div class="modal fade" id="tipoUsuario" role="dialog">
 	    <div class="modal-dialog">
