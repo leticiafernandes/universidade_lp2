@@ -9,26 +9,27 @@
 	
  	<link rel="stylesheet" type="text/css" href="./resources/bootstrap/css/bootstrap.min.css" />
  	<link rel="stylesheet" type="text/css" href="./resources/bootstrap/css/bootstrap-theme.min.css" />
+ 	<link rel="stylesheet" type="text/css" href="./resources/css/inicio.css" />
 </head>
 <body>
 	<div class="navbar navbar-default">
 	  <div class="container">
-	    <a class="navbar-brand" href="#">Universidade</a>
+	    <a class="navbar-brand" href="index.jsp">Universidade</a>
 	    <ul class="nav navbar-nav">
-	      <li class="active"><a href="#">Home</a></li>
-	      <li><a href="#">Link</a></li>
-	      <li><a href="#">Link</a></li>
+	      <li class="active"><a href="index.jsp">Home</a></li>
+	      <li><a class="btn" data-toggle="modal" href="cadastro.jsp">Cadastro Pessoa</a></li>
+	      <li><a href="#">Cadastro Turmas</a></li>
 	      <li class="divider-vertical"></li>
-	      <li><a href="#">More</a></li>
-	      <li><a href="#">Options</a></li>
+	      <li><a href="#">Quadro de Horários</a></li>
+	      <li><a href="#">Busca</a></li>
 	    </ul>
 	  </div>
 	</div>
 	
 	<div class="container">
-	  <div class="jumbotron text-center">
-	    <h1>Fixed Width Layout</h1>
-	    <p class="lead">The Bootstrap 3 grid is fluid only. This example shows how to use a custom container to create a fixed width layout.</p>
+	  <div class="destaque text-center">
+	  	<!-- img -->
+	  	<img alt="" src="./resources/img/graduation.jpg">
 	  </div>
 	  
 	  <hr>
@@ -37,6 +38,7 @@
 	
 	<script src="./resources/bootstrap/js/bootstrap.min.js"></script>
 	<script src="./resources/bootstrap/js/npm.js"></script>
+	<script src="./resources/jquery/jquery-ui.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </body>
 </html>
