@@ -3,6 +3,7 @@ package persistence;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.mysql.jdbc.ResultSet;
@@ -47,6 +48,8 @@ public class PessoaDAO{
 	}
 	
 	public List<Pessoa> listarTodos(Pessoa pessoa) throws SQLException {
+		List<Pessoa> listaPessoa = new ArrayList<Pessoa>();
+		
 		StringBuilder sql = new StringBuilder();
 		sql.append("SELECT ID_PESSOA, NOME, CPF, TELEFONE_UM, TELEFONE_DOIS, E.CEP, E.RUA, E.BAIRRO, E.COMPLEMENTO");
 		sql.append(" FROM PESSOA");
@@ -56,14 +59,21 @@ public class PessoaDAO{
 		
 		ResultSet rs = (ResultSet) stmt.executeQuery();
 		while(rs.next()){
+			pessoa = new Pessoa();
 			pessoa.setIdPessoa(rs.getInt("ID_PESSOA"));
 			pessoa.setNome(rs.getString("NOME"));
 			pessoa.setCpf(rs.getString("CPF"));
 			pessoa.setTelefoneUm(rs.getString("TELEFONE_UM"));
 			pessoa.setTelefoneDois(rs.getString("TELEFONE_DOIS"));
 			//pessoa.setEndereco.(rs.getInt("ID_ENDERECO"));
+			
+			listaPessoa.add(pessoa);
 		}
-		return null;
+		
+		rs.close();
+		stmt.close();
+		
+		return listaPessoa;
 	}
 	
 	public void alterar(Pessoa pessoa, Endereco endereco) throws SQLException{
