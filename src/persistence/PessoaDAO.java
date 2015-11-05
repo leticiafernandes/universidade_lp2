@@ -22,6 +22,9 @@ public class PessoaDAO{
 	}
 	
 	public void incluir(Pessoa pessoa, Endereco endereco) throws SQLException{
+		//endereco
+		enderecoDao.incluir(endereco);
+				
 		//pessoa
 		StringBuilder sql = new StringBuilder();
 		sql.append("INSERT INTO PESSOA (NOME, CPF, TELEFONE_UM, TELEFONE_DOIS, ID_ENDERECO)");
@@ -34,9 +37,6 @@ public class PessoaDAO{
 		stmt.setString(3, pessoa.getTelefoneUm());
 		stmt.setString(4, pessoa.getTelefoneDois());
 		stmt.setInt(5, pessoa.getEndereco().getIdEndereco());
-		
-		//endereco
-		enderecoDao.incluir(endereco);
 		
 		try {
 			//executando
@@ -77,6 +77,9 @@ public class PessoaDAO{
 	}
 	
 	public void alterar(Pessoa pessoa, Endereco endereco) throws SQLException{
+		//endereco
+		enderecoDao.incluir(endereco);
+		
 		//pessoa
 		StringBuilder sql = new StringBuilder();
 		sql.append("UPDATE PESSOA SET NOME= ?, CPF=  ?, TELEFONE_UM=  ?, TELEFONE_DOIS=  ?, ID_ENDERECO= ?");
@@ -91,9 +94,6 @@ public class PessoaDAO{
 		stmt.setInt(5, pessoa.getEndereco().getIdEndereco());
 		stmt.setInt(6, pessoa.getIdPessoa());
 		
-		//endereco
-		enderecoDao.incluir(endereco);
-		
 		try {
 			//executando
 			stmt.execute();
@@ -104,6 +104,9 @@ public class PessoaDAO{
 	}
 	
 	public void excluir(Pessoa pessoa, Endereco endereco) throws SQLException{
+		//endereco
+		enderecoDao.excluir(endereco);
+				
 		//pessoa
 		StringBuilder sql = new StringBuilder();
 		sql.append("DELETE FROM PESSOA WHERE ID_PESSOA = ?");
@@ -111,9 +114,6 @@ public class PessoaDAO{
 		PreparedStatement stmt = connection.prepareStatement(sql.toString());
 		
 		stmt.setInt(1, pessoa.getIdPessoa());
-		
-		//endereco
-		enderecoDao.excluir(endereco);
 		
 		try {
 			//executando

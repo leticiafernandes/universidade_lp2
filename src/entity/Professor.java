@@ -6,10 +6,9 @@ public class Professor extends Pessoa{
 	public Professor() {
 		// TODO Auto-generated constructor stub
 	}
-
-	public Professor(Integer idPessoa, String nome, String cpf, String telefoneUm, String telefoneDois,
-			Endereco endereco, String matricula) {
-		super(idPessoa, nome, cpf, telefoneUm, telefoneDois, endereco);
+	
+	public Professor(String matricula) {
+		super();
 		this.matricula = matricula;
 	}
 

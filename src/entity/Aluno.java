@@ -6,11 +6,10 @@ public class Aluno extends Pessoa{
 	public Aluno() {
 		// TODO Auto-generated constructor stub
 	}
-
-	public Aluno(Integer idPessoa, String nome, String cpf, String telefoneUm, String telefoneDois, Endereco endereco,
-			String matricula) {
-		super(idPessoa, nome, cpf, telefoneUm, telefoneDois, endereco);
-		this.setMatricula(matricula);
+	
+	public Aluno(String matricula) {
+		super();
+		this.matricula = matricula;
 	}
 
 	public String getMatricula() {

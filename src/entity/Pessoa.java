@@ -8,6 +8,10 @@ public class Pessoa {
 	private String telefoneDois;
 	private Endereco endereco;
 	
+	public Pessoa() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Pessoa(Integer idPessoa, String nome, String cpf, String telefoneUm, String telefoneDois,
 			Endereco endereco) {
 		super();
@@ -17,10 +21,6 @@ public class Pessoa {
 		this.telefoneUm = telefoneUm;
 		this.telefoneDois = telefoneDois;
 		this.endereco = endereco;
-	}
-
-	public Pessoa() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public Integer getIdPessoa() {
