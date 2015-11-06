@@ -1,13 +1,6 @@
- $(window).load(function(){
-    $("#tipoUsuario").modal("show");
+ $(document).ready(function(){
+	 $('.selectpicker').selectpicker({
+	      style: 'btn-info',
+	      size: 4
+	  });
 });
- 
-function verificarTipoUsuario(){
-	$("#tipoUsuario").modal("hide");
-	
-	if ( $("#formulario").is(":hidden")) {
-		  $("#formulario").slideDown("slow");
-	} else {
-		  $("#formulario").hide();
-	}
-}

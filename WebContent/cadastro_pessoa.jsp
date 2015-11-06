@@ -6,43 +6,22 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" href="./resources/bootstrap/css/bootstrap.min.css" />
  	<link rel="stylesheet" type="text/css" href="./resources/bootstrap/css/bootstrap-theme.min.css" />
+ 	<link rel="stylesheet" type="text/css" href="./resources/css/cadastro_pessoa.css" />
 </head>
 <body>
 	<%@ include file="./layout.jsp"%>
-	
-	<!-- Inicio Modal Professor ou Aluno -->
-	<div class="modal fade" id="tipoUsuario" role="dialog">
-	    <div class="modal-dialog">
-	      <div class="modal-content">
-	        <div class="modal-header">
-	          <button type="button" class="close" data-dismiss="modal">&times;</button>
-	          <h4 class="modal-title">Antes de se cadastrar na Universidade</h4>
-	        </div>
-	        <div class="modal-body">
-       			<p>Informe:</p>
-  				<form role="form">
-    			<div class="checkbox">
-      				<label><input type="checkbox" value="" required>Sou professor.</label>
-    			</div>
-    			<div class="checkbox">
-      				<label><input type="checkbox" value="" required>Sou aluno.</label>
-    			</div> 
-    			</form>      			
-	        </div>
-	        <div class="modal-footer">
-	          <button id="prosseguir" type="button" class="btn btn-default" onclick="verificarTipoUsuario();">Ok!</button>
-	        </div>
-	      </div>
-	    </div>
-	</div>
-	<!-- Fim Modal Professor ou Aluno -->
-  
-      
 	<!-- Inicio Formulário -->
-	<div id="formulario" class="container" style="display:none;">
+	<div id="formulario" class="container">
 	    <div class="row">
 	        <form role="form">
 	            <div class="col-lg-12">
+	            	<div class="form-group">
+	            		<label>Eu sou: </label>
+	            		<select class="selectpicker">
+					    <option value="aluno" >Aluno</option>
+					    <option value="professor ">Professor</option>
+					  </select>
+	            	</div>
 	                <div class="form-group">
 	                    <label>Nome:</label>
 	                    <div class="input-group">
@@ -76,7 +55,7 @@
 	                    </div>
 	                </div>
 	            </div>
-	            <div class="col-lg-6">
+	            <div class="col-lg-4">
 	                <div class="form-group">
 	                    <label>Endereço:</label>
 	                    <div class="input-group">
@@ -85,7 +64,7 @@
 	                    </div>
 	                </div>
                </div>
-               <div class="col-lg-3">
+               <div class="col-lg-4">
 	                <div class="form-group">
 	                    <label>Bairro:</label>
 	                    <div class="input-group">
@@ -94,11 +73,11 @@
 	                    </div>
 	                </div>
                </div>
-               <div class="col-lg-3">
+               <div class="col-lg-4">
 	                <div class="form-group">
 	                    <label>Complemento:</label>
 	                    <div class="input-group">
-	                        <input type="text" class="form-control" name="complemento" id="complemento" placeholder="Ex: próximo ao hospital...">
+	                        <input type="text" class="form-control complemento" name="complemento" id="complemento" placeholder="Ex: próximo ao hospital...">
 	                    </div>
 	                </div>
                </div>
@@ -108,7 +87,6 @@
                </div>
 	        </form>
 	    </div>
-	    <br/>
 	    <div class="row">
 		    <div class="col-lg-12">
 		    	<div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span> Campo obrigatório</strong></div>
@@ -116,8 +94,8 @@
 	    </div>
 	</div>
 	<!-- Fim Formulário -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="./resources/jquery/jquery-ui.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="./resources/bootstrap/js/bootstrap.min.js"></script>
 	<script src="./resources/js/cadastro.js"></script>
 </body>

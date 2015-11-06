@@ -14,9 +14,9 @@
 	  <div class="container">
 	    <a class="navbar-brand" href="index.jsp">Universidade</a>
 	    <ul class="nav navbar-nav">
-	      <li class="active"><a href="./index.jsp">Home</a></li>
-	      <li><a class="btn" data-toggle="modal" href="./cadastro.jsp">Cadastro Pessoa</a></li>
-	      <li><a href="#">Cadastro Turmas</a></li>
+	      <li><a href="./index.jsp">Home</a></li>
+	      <li><a href="./cadastro_pessoa.jsp">Cadastro Pessoa</a></li>
+	      <li><a href="./cadastro_turma.jsp">Cadastro Turmas</a></li>
 	      <li class="divider-vertical"></li>
 	      <li><a href="#">Quadro de Horários</a></li>
 	      <li><a href="#">Busca</a></li>
