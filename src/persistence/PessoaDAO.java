@@ -8,27 +8,21 @@ import java.util.List;
 
 import com.mysql.jdbc.ResultSet;
 
-import entity.Endereco;
 import entity.Pessoa;
 
 public class PessoaDAO{
 	
 	private Connection connection;
 	
-	private EnderecoDAO enderecoDao;
-	
 	public PessoaDAO() throws ClassNotFoundException {
 		this.connection = new ConnectionFactory().getConnection();
 	}
 	
-	public void incluir(Pessoa pessoa, Endereco endereco) throws SQLException{
-		//endereco
-		enderecoDao.incluir(endereco);
-				
+	public void incluir(Pessoa pessoa) throws SQLException, ClassNotFoundException{
 		//pessoa
 		StringBuilder sql = new StringBuilder();
-		sql.append("INSERT INTO PESSOA (NOME, CPF, TELEFONE_UM, TELEFONE_DOIS, ID_ENDERECO)");
-		sql.append(" VALUES (?, ?, ?, ?, ?)");
+		sql.append("INSERT INTO PESSOA (NOME, CPF, TELEFONE_UM, TELEFONE_DOIS, TIPO_PESSOA, CEP, RUA, BAIRRO, COMPLEMENTO)");
+		sql.append(" VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 		
 		PreparedStatement stmt = connection.prepareStatement(sql.toString());
 		
@@ -36,7 +30,11 @@ public class PessoaDAO{
 		stmt.setString(2, pessoa.getCpf());
 		stmt.setString(3, pessoa.getTelefoneUm());
 		stmt.setString(4, pessoa.getTelefoneDois());
-		stmt.setInt(5, pessoa.getEndereco().getIdEndereco());
+		stmt.setString(5, pessoa.getTipoPessoa());
+		stmt.setString(6, pessoa.getCep());
+		stmt.setString(7, pessoa.getRua());
+		stmt.setString(8, pessoa.getBairro());
+		stmt.setString(9, pessoa.getComplemento());
 		
 		try {
 			//executando
@@ -51,9 +49,8 @@ public class PessoaDAO{
 		List<Pessoa> listaPessoa = new ArrayList<Pessoa>();
 		
 		StringBuilder sql = new StringBuilder();
-		sql.append("SELECT ID_PESSOA, NOME, CPF, TELEFONE_UM, TELEFONE_DOIS, E.CEP, E.RUA, E.BAIRRO, E.COMPLEMENTO");
+		sql.append("SELECT ID_PESSOA, NOME, CPF, TELEFONE_UM, TELEFONE_DOIS, TIPO_PESSOA, CEP, RUA, BAIRRO, COMPLEMENTO");
 		sql.append(" FROM PESSOA");
-		sql.append(" INNER JOIN ENDERECO E ON E.ID_ENDERECO = PESSOA.ID_ENDERECO");
 		
 		PreparedStatement stmt = connection.prepareStatement(sql.toString());
 		
@@ -65,7 +62,11 @@ public class PessoaDAO{
 			pessoa.setCpf(rs.getString("CPF"));
 			pessoa.setTelefoneUm(rs.getString("TELEFONE_UM"));
 			pessoa.setTelefoneDois(rs.getString("TELEFONE_DOIS"));
-			//pessoa.setEndereco.(rs.getInt("ID_ENDERECO"));
+			pessoa.setTipoPessoa(rs.getString("TIPO_PESSOA"));
+			pessoa.setCep(rs.getString("CEP"));
+			pessoa.setRua(rs.getString("RUA"));
+			pessoa.setBairro(rs.getString("BAIRRO"));
+			pessoa.setComplemento(rs.getString("COMPLEMENTO"));
 			
 			listaPessoa.add(pessoa);
 		}
@@ -76,13 +77,10 @@ public class PessoaDAO{
 		return listaPessoa;
 	}
 	
-	public void alterar(Pessoa pessoa, Endereco endereco) throws SQLException{
-		//endereco
-		enderecoDao.incluir(endereco);
-		
+	public void alterar(Pessoa pessoa) throws SQLException, ClassNotFoundException{
 		//pessoa
 		StringBuilder sql = new StringBuilder();
-		sql.append("UPDATE PESSOA SET NOME= ?, CPF=  ?, TELEFONE_UM=  ?, TELEFONE_DOIS=  ?, ID_ENDERECO= ?");
+		sql.append("UPDATE PESSOA SET NOME= ?, CPF=  ?, TELEFONE_UM=  ?, TELEFONE_DOIS=  ?, TIPO_PESSOA= ?, CEP= ?, RUA= ?, BAIRRO= ?,COMPLEMENTO= ?");
 		sql.append(" WHERE ID_PESSOA = ?");
 		
 		PreparedStatement stmt = connection.prepareStatement(sql.toString());
@@ -91,8 +89,12 @@ public class PessoaDAO{
 		stmt.setString(2, pessoa.getCpf());
 		stmt.setString(3, pessoa.getTelefoneUm());
 		stmt.setString(4, pessoa.getTelefoneDois());
-		stmt.setInt(5, pessoa.getEndereco().getIdEndereco());
-		stmt.setInt(6, pessoa.getIdPessoa());
+		stmt.setString(5, pessoa.getTipoPessoa());
+		stmt.setString(6, pessoa.getCep());
+		stmt.setString(7, pessoa.getRua());
+		stmt.setString(8, pessoa.getBairro());
+		stmt.setString(9, pessoa.getComplemento());
+		stmt.setInt(10, pessoa.getIdPessoa());
 		
 		try {
 			//executando
@@ -103,16 +105,11 @@ public class PessoaDAO{
 		}
 	}
 	
-	public void excluir(Pessoa pessoa, Endereco endereco) throws SQLException{
-		//endereco
-		enderecoDao.excluir(endereco);
-				
+	public void excluir(Pessoa pessoa) throws SQLException, ClassNotFoundException{
 		//pessoa
 		StringBuilder sql = new StringBuilder();
 		sql.append("DELETE FROM PESSOA WHERE ID_PESSOA = ?");
-		
 		PreparedStatement stmt = connection.prepareStatement(sql.toString());
-		
 		stmt.setInt(1, pessoa.getIdPessoa());
 		
 		try {

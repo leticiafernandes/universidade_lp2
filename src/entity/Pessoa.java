@@ -6,29 +6,29 @@ public class Pessoa {
 	private String cpf;
 	private String telefoneUm;
 	private String telefoneDois;
-	private Endereco endereco;
+	private String tipoPessoa;
+	private String cep;
+	private String rua;
+	private String bairro;
+	private String complemento;
 	
 	public Pessoa() {
 		// TODO Auto-generated constructor stub
 	}
-
-	public Pessoa(Integer idPessoa, String nome, String cpf, String telefoneUm, String telefoneDois,
-			Endereco endereco) {
+	
+	public Pessoa(Integer idPessoa, String nome, String cpf, String telefoneUm, String telefoneDois, String tipoPessoa,
+			String cep, String rua, String bairro, String complemento) {
 		super();
 		this.idPessoa = idPessoa;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.telefoneUm = telefoneUm;
 		this.telefoneDois = telefoneDois;
-		this.endereco = endereco;
-	}
-
-	public Integer getIdPessoa() {
-		return idPessoa;
-	}
-
-	public void setIdPessoa(Integer idPessoa) {
-		this.idPessoa = idPessoa;
+		this.tipoPessoa = tipoPessoa;
+		this.cep = cep;
+		this.rua = rua;
+		this.bairro = bairro;
+		this.complemento = complemento;
 	}
 
 	public String getNome() {
@@ -63,11 +63,51 @@ public class Pessoa {
 		this.telefoneDois = telefoneDois;
 	}
 
-	public Endereco getEndereco() {
-		return endereco;
+	public String getCep() {
+		return cep;
 	}
 
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
+
+	public String getRua() {
+		return rua;
+	}
+
+	public void setRua(String rua) {
+		this.rua = rua;
+	}
+
+	public String getBairro() {
+		return bairro;
+	}
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+
+	public String getComplemento() {
+		return complemento;
+	}
+
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
+	}
+
+	public String getTipoPessoa() {
+		return tipoPessoa;
+	}
+
+	public void setTipoPessoa(String tipoPessoa) {
+		this.tipoPessoa = tipoPessoa;
+	}
+
+	public Integer getIdPessoa() {
+		return idPessoa;
+	}
+
+	public void setIdPessoa(Integer idPessoa) {
+		this.idPessoa = idPessoa;
 	}
 }
