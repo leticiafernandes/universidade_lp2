@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -30,10 +31,21 @@ public class PessoaAction extends HttpServlet{
 			pessoa.setComplemento(request.getParameter("complemento"));
 			
 			new PessoaDAO().incluir(pessoa);
+			
 		} catch (Exception e) {
 			e.getMessage();
 		}
 	}	
+	
+	protected void listarPessoas (HttpServletRequest request, HttpServletResponse response)throws
+	ServletException, IOException{
+		try {
+			List<Pessoa> listaPessoas = new PessoaDAO().listarTodos(); 
+			request.setAttribute("listaPessoas", listaPessoas);
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
 	
 	@Override
 	protected void doPost(HttpServletRequest request,
@@ -51,9 +63,7 @@ public class PessoaAction extends HttpServlet{
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		try {
-			processRequest(request, response);
-		} catch (SQLException ex) {
-
+			listarPessoas(request, response);
 		} catch (Exception ex) {
 		
 		}

@@ -19,4 +19,13 @@
     <url-pattern>/InserirPessoa</url-pattern>
 </servlet-mapping>
 
+<servlet>
+	<servlet-name>ListarPessoa</servlet-name>
+    <servlet-class>controller.PessoaAction</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>ListarPessoa</servlet-name>
+    <url-pattern>/ListarPessoa</url-pattern>
+</servlet-mapping>
+
 </web-app>

@@ -19,7 +19,7 @@
 	      <li><a href="./cadastro_turma.jsp">Cadastro Turmas</a></li>
 	      <li class="divider-vertical"></li>
 	      <li><a href="#">Quadro de Horários</a></li>
-	      <li><a href="#">Busca</a></li>
+	      <li><a href="./busca.jsp">Busca</a></li>
 	    </ul>
 	  </div>
 	</div>

@@ -45,7 +45,7 @@ public class PessoaDAO{
 		}
 	}
 	
-	public List<Pessoa> listarTodos(Pessoa pessoa) throws SQLException {
+	public List<Pessoa> listarTodos() throws SQLException {
 		List<Pessoa> listaPessoa = new ArrayList<Pessoa>();
 		
 		StringBuilder sql = new StringBuilder();
@@ -56,7 +56,7 @@ public class PessoaDAO{
 		
 		ResultSet rs = (ResultSet) stmt.executeQuery();
 		while(rs.next()){
-			pessoa = new Pessoa();
+			Pessoa pessoa = new Pessoa();
 			pessoa.setIdPessoa(rs.getInt("ID_PESSOA"));
 			pessoa.setNome(rs.getString("NOME"));
 			pessoa.setCpf(rs.getString("CPF"));
