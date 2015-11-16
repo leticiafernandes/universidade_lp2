@@ -26,6 +26,15 @@
 							    </select>
 						    </div>
 					    </div>
+					    <div class="col-lg-6">
+						    <div class="form-group">
+							     <label>Matrícula:</label>
+							     <div class="input-group">
+		                         	<input type="text" class="form-control" name="matricula" id="matricula" placeholder="Digite sua matrícula" required>
+		                         	<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+			                    </div>
+						    </div>
+					    </div>
 				    </div>
 	            	<div class="row">
 		                <div class="col-lg-6">

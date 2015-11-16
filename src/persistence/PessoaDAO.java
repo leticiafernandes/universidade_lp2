@@ -21,8 +21,8 @@ public class PessoaDAO{
 	public void incluir(Pessoa pessoa) throws SQLException, ClassNotFoundException{
 		//pessoa
 		StringBuilder sql = new StringBuilder();
-		sql.append("INSERT INTO PESSOA (NOME, CPF, TELEFONE_UM, TELEFONE_DOIS, TIPO_PESSOA, CEP, RUA, BAIRRO, COMPLEMENTO)");
-		sql.append(" VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+		sql.append("INSERT INTO PESSOA (NOME, CPF, TELEFONE_UM, TELEFONE_DOIS, TIPO_PESSOA, CEP, RUA, BAIRRO, COMPLEMENTO, MATRICULA)");
+		sql.append(" VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 		
 		PreparedStatement stmt = connection.prepareStatement(sql.toString());
 		
@@ -35,6 +35,7 @@ public class PessoaDAO{
 		stmt.setString(7, pessoa.getRua());
 		stmt.setString(8, pessoa.getBairro());
 		stmt.setString(9, pessoa.getComplemento());
+		stmt.setString(10, pessoa.getMatricula());
 		
 		try {
 			//executando
@@ -49,7 +50,7 @@ public class PessoaDAO{
 		List<Pessoa> listaPessoa = new ArrayList<Pessoa>();
 		
 		StringBuilder sql = new StringBuilder();
-		sql.append("SELECT ID_PESSOA, NOME, CPF, TELEFONE_UM, TELEFONE_DOIS, TIPO_PESSOA, CEP, RUA, BAIRRO, COMPLEMENTO");
+		sql.append("SELECT ID_PESSOA, NOME, CPF, TELEFONE_UM, TELEFONE_DOIS, TIPO_PESSOA, CEP, RUA, BAIRRO, COMPLEMENTO, MATRICULA");
 		sql.append(" FROM PESSOA");
 		
 		PreparedStatement stmt = connection.prepareStatement(sql.toString());
@@ -67,6 +68,7 @@ public class PessoaDAO{
 			pessoa.setRua(rs.getString("RUA"));
 			pessoa.setBairro(rs.getString("BAIRRO"));
 			pessoa.setComplemento(rs.getString("COMPLEMENTO"));
+			pessoa.setMatricula(rs.getString("MATRICULA"));
 			
 			listaPessoa.add(pessoa);
 		}
@@ -80,7 +82,7 @@ public class PessoaDAO{
 	public void alterar(Pessoa pessoa) throws SQLException, ClassNotFoundException{
 		//pessoa
 		StringBuilder sql = new StringBuilder();
-		sql.append("UPDATE PESSOA SET NOME= ?, CPF=  ?, TELEFONE_UM=  ?, TELEFONE_DOIS=  ?, TIPO_PESSOA= ?, CEP= ?, RUA= ?, BAIRRO= ?,COMPLEMENTO= ?");
+		sql.append("UPDATE PESSOA SET NOME= ?, CPF=  ?, TELEFONE_UM=  ?, TELEFONE_DOIS=  ?, TIPO_PESSOA= ?, CEP= ?, RUA= ?, BAIRRO= ?,COMPLEMENTO= ?, MATRICULA= ?");
 		sql.append(" WHERE ID_PESSOA = ?");
 		
 		PreparedStatement stmt = connection.prepareStatement(sql.toString());
@@ -94,7 +96,8 @@ public class PessoaDAO{
 		stmt.setString(7, pessoa.getRua());
 		stmt.setString(8, pessoa.getBairro());
 		stmt.setString(9, pessoa.getComplemento());
-		stmt.setInt(10, pessoa.getIdPessoa());
+		stmt.setString(10, pessoa.getMatricula());
+		stmt.setInt(11, pessoa.getIdPessoa());
 		
 		try {
 			//executando

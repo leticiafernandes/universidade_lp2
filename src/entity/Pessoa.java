@@ -11,13 +11,14 @@ public class Pessoa {
 	private String rua;
 	private String bairro;
 	private String complemento;
+	private String matricula;
 	
 	public Pessoa() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public Pessoa(Integer idPessoa, String nome, String cpf, String telefoneUm, String telefoneDois, String tipoPessoa,
-			String cep, String rua, String bairro, String complemento) {
+			String cep, String rua, String bairro, String complemento, String matricula) {
 		super();
 		this.idPessoa = idPessoa;
 		this.nome = nome;
@@ -29,6 +30,7 @@ public class Pessoa {
 		this.rua = rua;
 		this.bairro = bairro;
 		this.complemento = complemento;
+		this.matricula = matricula;
 	}
 
 	public String getNome() {
@@ -109,5 +111,13 @@ public class Pessoa {
 
 	public void setIdPessoa(Integer idPessoa) {
 		this.idPessoa = idPessoa;
+	}
+
+	public String getMatricula() {
+		return matricula;
+	}
+
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
 	}
 }

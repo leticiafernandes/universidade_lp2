@@ -16,7 +16,7 @@ public class PessoaAction extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 	
-	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
+	protected void incluir(HttpServletRequest request, HttpServletResponse response) throws
 		ServletException,IOException,SQLException {
 		try {
 			Pessoa pessoa = new Pessoa();
@@ -29,21 +29,29 @@ public class PessoaAction extends HttpServlet{
 			pessoa.setRua(request.getParameter("rua"));
 			pessoa.setBairro(request.getParameter("bairro"));
 			pessoa.setComplemento(request.getParameter("complemento"));
+			pessoa.setMatricula(request.getParameter("matricula"));
 			
 			new PessoaDAO().incluir(pessoa);
 			
 		} catch (Exception e) {
-			e.getMessage();
+			request.getRequestDispatcher("erro.jsp").forward(
+					request, response);
+		} finally {
+				request.getRequestDispatcher("busca.jsp").forward(request, response);						
 		}
 	}	
 	
-	protected void listarPessoas (HttpServletRequest request, HttpServletResponse response)throws
+	
+	protected void listarPessoas(HttpServletRequest request, HttpServletResponse response)throws
 	ServletException, IOException{
 		try {
 			List<Pessoa> listaPessoas = new PessoaDAO().listarTodos(); 
 			request.setAttribute("listaPessoas", listaPessoas);
 		} catch (Exception e) {
-			e.getMessage();
+			request.getRequestDispatcher("erro.jsp").forward(
+					request, response);
+		} finally {
+				request.getRequestDispatcher("busca.jsp").forward(request, response);						
 		}
 	}
 	
@@ -51,7 +59,7 @@ public class PessoaAction extends HttpServlet{
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		try {
-			processRequest(request, response);
+			incluir(request, response);
 		} catch (SQLException ex) {
 			
 		} catch (Exception ex) {

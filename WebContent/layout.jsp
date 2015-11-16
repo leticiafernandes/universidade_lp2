@@ -4,9 +4,6 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" type="text/css" href="./resources/bootstrap/css/bootstrap.min.css" />
- 	<link rel="stylesheet" type="text/css" href="./resources/bootstrap/css/bootstrap-theme.min.css" />
- 	<link rel="stylesheet" type="text/css" href="./resources/css/inicio.css" />
 </head>
 <body>
 
@@ -24,9 +21,6 @@
 	  </div>
 	</div>
 
-	<script src="./resources/bootstrap/js/bootstrap.min.js"></script>
-	<script src="./resources/bootstrap/js/npm.js"></script>
-	<script src="./resources/jquery/jquery-ui.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	
 </body>
 </html>
