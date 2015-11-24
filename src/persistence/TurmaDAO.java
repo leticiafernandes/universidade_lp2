@@ -22,7 +22,7 @@ public class TurmaDAO {
 		//pessoa
 		StringBuilder sql = new StringBuilder();
 		sql.append("INSERT INTO TURMA (NOME_TURMA, LOCAL, HORARIO, ID_DISCIPLINA, ID_PESSOA)");
-		sql.append(" VALUES (?, ?, ?, ?, ?)");
+		sql.append(" VALUES (?, ?, ?, ?, 1)");
 		
 		PreparedStatement stmt = connection.prepareStatement(sql.toString());
 		
@@ -30,7 +30,7 @@ public class TurmaDAO {
 		stmt.setString(2, turma.getLocal());
 		stmt.setString(3, turma.getHorario());
 		stmt.setInt(4, turma.getDisciplina().getIdDisciplina());
-		stmt.setInt(5, turma.getPessoa().getIdPessoa());
+//		stmt.setInt(5, turma.getPessoa().getIdPessoa());
 
 		try {
 			//executando

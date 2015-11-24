@@ -28,4 +28,13 @@
     <url-pattern>/ListarPessoa</url-pattern>
 </servlet-mapping>
 
+<servlet>
+	<servlet-name>InserirTurma</servlet-name>
+    <servlet-class>controller.TurmaAction</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>InserirTurma</servlet-name>
+    <url-pattern>/InserirTurma</url-pattern>
+</servlet-mapping>
+
 </web-app>

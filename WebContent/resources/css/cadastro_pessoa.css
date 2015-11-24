@@ -3,3 +3,8 @@
 .complemento {
 	width: 197% !important;
 }
+
+.required {
+	margin-top: 23px !important;
+	padding: 7px !important;
+}
