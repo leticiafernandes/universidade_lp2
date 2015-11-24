@@ -34,10 +34,7 @@ public class PessoaAction extends HttpServlet{
 			new PessoaDAO().incluir(pessoa);
 			
 		} catch (Exception e) {
-			request.getRequestDispatcher("erro.jsp").forward(
-					request, response);
-		} finally {
-				request.getRequestDispatcher("busca.jsp").forward(request, response);						
+			request.getRequestDispatcher("erro.jsp").forward(request, response);
 		}
 	}	
 	
@@ -56,24 +53,22 @@ public class PessoaAction extends HttpServlet{
 	}
 	
 	@Override
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			incluir(request, response);
 		} catch (SQLException ex) {
-			
-		} catch (Exception ex) {
-			
+			ex.getMessage();
 		}
 	}
 	
 	@Override
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 		try {
 			listarPessoas(request, response);
 		} catch (Exception ex) {
-		
+			ex.getMessage();
+		} finally {
+			request.getRequestDispatcher("busca.jsp").forward(request, response);						
 		}
 	}
 }

@@ -13,50 +13,51 @@
 	<!-- Inicio Formulário -->
 	<div id="formulario" class="container">
 	    <div class="row">
+	    	<h3>Dados Pessoais:</h3><hr>
 	        <form action="InserirPessoa" method="POST">
-	        		<div class="row">
-		            	<div class="col-lg-6">
-			            	<div class="form-group">
-							    <label>Eu sou: </label>
-							    <input type="hidden" value="idPessoa" name="idPessoa">
-							    <select name="tipoPessoa" class = "form-control">
-							       <option value="">Escolher</option>
-							       <option value="Aluno">Aluno</option>
-							       <option value="Professor">Professor</option>
-							    </select>
-						    </div>
-					    </div>
-					    <div class="col-lg-6">
-						    <div class="form-group">
-							     <label>Matrícula:</label>
-							     <div class="input-group">
-		                         	<input type="text" class="form-control" name="matricula" id="matricula" placeholder="Digite sua matrícula" required>
-		                         	<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-			                    </div>
-						    </div>
+        		<div class="row">
+	            	<div class="col-lg-6">
+		            	<div class="form-group">
+						    <label>Eu sou: </label>
+						    <input type="hidden" value="idPessoa" name="idPessoa">
+						    <select name="tipoPessoa" class = "form-control">
+						       <option value="">Escolher</option>
+						       <option value="Aluno">Aluno</option>
+						       <option value="Professor">Professor</option>
+						    </select>
 					    </div>
 				    </div>
-	            	<div class="row">
-		                <div class="col-lg-6">
-		                	<div class="form-group">
-			                    <label>Nome:</label>
-			                    <div class="input-group">
-			                        <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite seu nome completo" required>
-			                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-			                    </div>
+				    <div class="col-lg-6">
+					    <div class="form-group">
+						     <label>Matrícula:</label>
+						     <div class="input-group">
+	                         	<input type="text" class="form-control" name="matricula" id="matricula" placeholder="Digite sua matrícula" required>
+	                         	<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
 		                    </div>
-		                </div>
-		                <div class="col-lg-6">
-		                	<div class="form-group">
-			                    <label>CPF</label>
-			                    <div class="input-group">
-			                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite seu cpf" required>
-			                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-			                    </div>
+					    </div>
+				    </div>
+			    </div>
+            	<div class="row">
+	                <div class="col-lg-6">
+	                	<div class="form-group">
+		                    <label>Nome:</label>
+		                    <div class="input-group">
+		                        <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite seu nome completo" required>
+		                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
 		                    </div>
-		                </div>
+	                    </div>
 	                </div>
-	             <div class="row">
+	                <div class="col-lg-6">
+	                	<div class="form-group">
+		                    <label>CPF</label>
+		                    <div class="input-group">
+		                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite seu cpf" required>
+		                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+		                    </div>
+	                    </div>
+	                </div>
+                </div>
+             	<div class="row">
 		             <div class="col-lg-6">
 		            	<div class="form-group">
 		                    <label>Telefone Residencial</label>
@@ -76,6 +77,7 @@
 	                	</div>
 		            </div>
 	            </div>
+	            <h3>Endereço:</h3><hr>
 	            <div class="row">
 		            <div class="col-lg-4">
 		            	<div class="form-group">
@@ -106,7 +108,7 @@
 	               </div>
                </div>
                <div class="row">
-                  <div class="col-lg-6">
+                  <div class="col-lg-4">
 			    	   <div class="form-group">
 			    	      <label>Bairro:</label>
 			    	      <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Digite seu bairro">
@@ -115,17 +117,20 @@
                </div>
                <div class="row">
                	   <div class="form-group">
-			    	   <div class="col-lg-6">
+			    	   <div class="col-lg-12">
 			    			<div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span> Campo obrigatório</strong></div>
 				        </div>
-				        <div class="col-lg-6">
-		                  <input type="submit" id="enviar" value="Enviar" class="btn btn-info pull-right">
-		               </div>
 	    			</div>
+	    		</div>
+	    		<div class="row">
+	    			<div class="col-lg-12">
+                  		<input type="submit" id="enviar" value="Enviar" class="btn btn-info pull-right">
+               		</div>
 	    		</div>
         	</form>
     	</div>
     </div>
+    <hr>
 	<!-- Fim Formulário -->
 	<script src="./resources/jquery/jquery-ui.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

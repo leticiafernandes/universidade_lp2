@@ -33,7 +33,7 @@ public class TurmaAction extends HttpServlet{
 	} catch (Exception e) {
 		request.getRequestDispatcher("erro.jsp").forward(request, response);
 	} finally {
-		request.getRequestDispatcher("/busca.jsp").forward(request, response);						
+		request.getRequestDispatcher("busca.jsp").forward(request, response);						
 	}
 }	
 	
@@ -55,7 +55,7 @@ public class TurmaAction extends HttpServlet{
 		} catch (Exception ex){	
 			request.getRequestDispatcher("erro.jsp").forward(request, response);
 	} finally {
-			request.getRequestDispatcher("cadastro.jsp").forward(request, response);						
+			request.getRequestDispatcher("cadastro_turma.jsp").forward(request, response);						
 		}
 	}
 	
