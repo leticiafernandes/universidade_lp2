@@ -14,12 +14,12 @@
 	      <li><a href="./cadastro_pessoa.jsp">Cadastro Pessoa</a></li>
 	      <li><a href="./InserirTurma">Cadastro Turmas</a></li>
 	      <li class="divider-vertical"></li>
-	      <li><a href="./ListarPessoa">Busca</a></li>
+	      <li><a href="./ListarPessoa">Pesquisar Pessoa</a></li>
+	      <li><a href="./ListarTurmas">Pesquisar Turma</a></li>
 	      <li><a href="#">Quadro de Horários</a></li>
 	    </ul>
 	  </div>
 	</div>
-
 	
 </body>
 </html>

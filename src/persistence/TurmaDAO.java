@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.mysql.jdbc.ResultSet;
 
+import entity.Disciplina;
 import entity.Turma;
 
 public class TurmaDAO {
@@ -45,18 +46,22 @@ public class TurmaDAO {
 		List<Turma> listaTurma = new ArrayList<Turma>();
 		
 		StringBuilder sql = new StringBuilder();
-		sql.append("SELECT ID_TURMA, NOME_TURMA, LOCAL, HORARIO");
+		sql.append("SELECT NOME_TURMA, LOCAL, HORARIO, NOME");
 		sql.append(" FROM TURMA");
+		sql.append(" INNER JOIN DISCIPLINA ON DISCIPLINA.ID_DISCIPLINA = TURMA.ID_DISCIPLINA");
 		
 		PreparedStatement stmt = connection.prepareStatement(sql.toString());
 		
 		ResultSet rs = (ResultSet) stmt.executeQuery();
 		while(rs.next()){
 			Turma turma = new Turma();
-			turma.setIdTurma(rs.getInt("ID_TURMA"));
+			Disciplina d = new Disciplina();
 			turma.setNome(rs.getString("NOME_TURMA"));
 			turma.setLocal(rs.getString("LOCAL"));
 			turma.setHorario(rs.getString("HORARIO"));
+			
+			d.setNome(rs.getString("NOME"));
+			turma.setDisciplina(d);
 			
 			listaTurma.add(turma);
 		}

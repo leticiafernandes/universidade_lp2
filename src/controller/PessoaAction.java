@@ -38,7 +38,6 @@ public class PessoaAction extends HttpServlet{
 		}
 	}	
 	
-	
 	protected void listarPessoas(HttpServletRequest request, HttpServletResponse response)throws
 	ServletException, IOException{
 		try {
@@ -67,8 +66,6 @@ public class PessoaAction extends HttpServlet{
 			listarPessoas(request, response);
 		} catch (Exception ex) {
 			ex.getMessage();
-		} finally {
-			request.getRequestDispatcher("busca.jsp").forward(request, response);						
 		}
 	}
 }

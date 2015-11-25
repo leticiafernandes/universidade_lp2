@@ -16,7 +16,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
-				<h3>Busque a pessoa que deseja encontrar</h3>
+				<h3>Busque a turma que deseja encontrar:</h3>
 				<hr>
 			</div>
 		</div>
@@ -30,20 +30,20 @@
 								<table class="table table-bordered table-hover" id="dataTables-example">
 									<thead>
 										<tr>
-											<th>Nome</th>
-											<th>Matrícula</th>
-											<th>CPF</th>
-											<th>Tipo do Usuário</th>
+											<th>Turma</th>
+											<th>Disciplina</th>
+											<th>Local</th>
+											<th>Horario</th>
 											<th>Ação</th>
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach items="${listaPessoas}" var="p">
+										<c:forEach items="${listaTurmas}" var="t">
 											<tr>
-												<td>${p.nome}</td>
-												<td>${p.matricula}</td>
-												<td>${p.cpf}</td>
-												<td>${p.tipoPessoa}</td>
+												<td>${t.nome}</td>
+												<td>${t.disciplina.nome}</td>
+												<td>${t.local}</td>
+												<td>${t.horario}</td>
 												<td>
 													<button type="button" class="btn btn-danger">Excluir</button>
 <!-- 													<button type="button" class="btn btn-default">Alterar</button> -->
@@ -73,6 +73,5 @@
 			$('#dataTables-example').dataTable();
 		});
 	</script>
-
 </body>
 </html>

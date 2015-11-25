@@ -37,4 +37,13 @@
     <url-pattern>/InserirTurma</url-pattern>
 </servlet-mapping>
 
+<servlet>
+	<servlet-name>ListarTurmas</servlet-name>
+    <servlet-class>controller.TurmaAction</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>ListarTurmas</servlet-name>
+    <url-pattern>/ListarTurmas</url-pattern>
+</servlet-mapping>
+
 </web-app>

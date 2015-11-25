@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -32,10 +33,17 @@ public class TurmaAction extends HttpServlet{
 		new TurmaDAO().incluir(turma);
 	} catch (Exception e) {
 		request.getRequestDispatcher("erro.jsp").forward(request, response);
-	} finally {
-		request.getRequestDispatcher("busca.jsp").forward(request, response);						
-	}
+	} 
 }	
+	
+	protected void listarTurmas(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		try {
+			List<Turma> listaTurmas = new TurmaDAO().listarTodos();
+			request.setAttribute("listaTurmas", listaTurmas);
+		} catch (Exception e) {
+			e.getLocalizedMessage();
+		}
+	}
 	
 	@Override
 	protected void doPost(HttpServletRequest request,
@@ -44,6 +52,8 @@ public class TurmaAction extends HttpServlet{
 			incluir(request, response);
 		} catch (Exception ex){	
 			request.getRequestDispatcher("erro.jsp").forward(request, response);
+		} finally{
+			request.getRequestDispatcher("./ListarTurmas").forward(request, response);
 		}
 	}
 	
@@ -52,10 +62,18 @@ public class TurmaAction extends HttpServlet{
 			HttpServletResponse response) throws ServletException, IOException {
 		try {
 			new DisciplinaAction().listarDisciplinas(request, response);
+			listarTurmas(request, response);
 		} catch (Exception ex){	
 			request.getRequestDispatcher("erro.jsp").forward(request, response);
-	} finally {
-			request.getRequestDispatcher("cadastro_turma.jsp").forward(request, response);						
+		}
+		
+		finally {
+			String pathInfo = request.getRequestURI();
+			if (pathInfo.equals("/Universidade_LPII/InserirTurma")) {
+				request.getRequestDispatcher("cadastro_turma.jsp").forward(request, response);
+			}else if (pathInfo.equals("/Universidade_LPII/ListarTurmas")) {
+				request.getRequestDispatcher("busca_turma.jsp").forward(request, response);
+			}
 		}
 	}
 	
