@@ -16,7 +16,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
-				<h3>Busque a pessoa que deseja encontrar</h3>
+				<h3>Busque a pessoa que deseja encontrar:</h3>
 				<hr>
 			</div>
 		</div>
@@ -45,8 +45,7 @@
 												<td>${p.cpf}</td>
 												<td>${p.tipoPessoa}</td>
 												<td>
-													<button type="button" class="btn btn-danger">Excluir</button>
-<!-- 													<button type="button" class="btn btn-default">Alterar</button> -->
+													<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exclusao">Excluir</button>
 												</td>
 											</tr>
 										</c:forEach>
@@ -61,6 +60,27 @@
 			</div>
 		</div>
 	</div>
+	
+	<!-- inicio modal confirmar exclusao -->
+	<div class="modal fade" id="exclusao" tabindex="-1" role="dialog">
+		<div class="modal-dialog" style="z-index: 9999;">
+		  <div class="modal-content">
+		    <div class="modal-header">
+		      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		      <h4 class="modal-title">Excluir</h4>
+		    </div>
+		    <div class="modal-body">
+		      <p>Tem deseja que deseja excluir esta pessoa?</p>
+		    </div>
+		    <div class="modal-footer">
+		      <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+		      <button type="button" class="btn btn-danger">Excluir</button>
+		    </div>
+		  </div>
+		</div>
+	</div>
+	<!-- fim modal confirmar exclusao -->
+
 	<script src="./resources/js/jquery.js"></script>
 	<script src="./resources/js/bootstrap.js"></script>
 	<script src="./resources/js/metisMenu/metisMenu.min.js"></script>

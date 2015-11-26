@@ -19,7 +19,6 @@
 	            	<div class="col-lg-6">
 		            	<div class="form-group">
 						    <label>Eu sou: </label>
-						    <input type="hidden" value="idPessoa" name="idPessoa">
 						    <select name="tipoPessoa" class = "form-control">
 						       <option value="">Escolher</option>
 						       <option value="Aluno">Aluno</option>
@@ -77,7 +76,8 @@
 	                	</div>
 		            </div>
 	            </div>
-	            <h3>Endereço:</h3><hr>
+	            <h3>Endereço:</h3>
+	            <hr>
 	            <div class="row">
 		            <div class="col-lg-4">
 		            	<div class="form-group">
@@ -115,7 +115,16 @@
 			    	   </div>
 		          </div>
                </div>
-               <div class="row">
+	    		<h3>Turmas:</h3>
+	    		<hr>
+	    		<div class="row">
+	    			<div class="col-lg-6">
+	    				<div class="form-group">
+						</div>
+	    			</div>
+	    		</div>
+	    		<br>
+	    		<div class="row">
                	   <div class="form-group">
 			    	   <div class="col-lg-12">
 			    			<div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span> Campo obrigatório</strong></div>
@@ -132,9 +141,9 @@
     </div>
     <hr>
 	<!-- Fim Formulário -->
-	<script src="./resources/jquery/jquery-ui.min.js"></script>
+	<script src="./resources/js/cadastro_pessoa.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="./resources/jquery/jquery-ui.min.js"></script>
 	<script src="./resources/bootstrap/js/bootstrap.min.js"></script>
-	<script src="./resources/js/cadastro.js"></script>
 </body>
 </html>

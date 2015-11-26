@@ -14,17 +14,14 @@
 <body>
 	<%@ include file="./layout.jsp"%>
 	<div class="container">
-	  
 	  <div class="destaque text-center">
-	  	<!-- img -->
 	  	<img alt="" src="./resources/img/graduation.jpg">
 	  </div>
-	  
 	</div> 
 	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="./resources/jquery/jquery-ui.min.js"></script>
 	<script src="./resources/bootstrap/js/bootstrap.min.js"></script>
 	<script src="./resources/bootstrap/js/npm.js"></script>
-	<script src="./resources/jquery/jquery-ui.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </body>
 </html>

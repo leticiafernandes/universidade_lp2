@@ -11,9 +11,8 @@
 	  <div class="container">
 	    <a class="navbar-brand" href="index.jsp">Universidade</a>
 	    <ul class="nav navbar-nav">
-	      <li><a href="./cadastro_pessoa.jsp">Cadastro Pessoa</a></li>
+	      <li><a href="./InserirPessoa">Cadastro Pessoa</a></li>
 	      <li><a href="./InserirTurma">Cadastro Turmas</a></li>
-	      <li class="divider-vertical"></li>
 	      <li><a href="./ListarPessoa">Pesquisar Pessoa</a></li>
 	      <li><a href="./ListarTurmas">Pesquisar Turma</a></li>
 	      <li><a href="#">Quadro de Horários</a></li>

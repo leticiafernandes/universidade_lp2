@@ -32,7 +32,7 @@ public class TurmaAction extends HttpServlet{
 		
 		new TurmaDAO().incluir(turma);
 	} catch (Exception e) {
-		request.getRequestDispatcher("erro.jsp").forward(request, response);
+		e.getLocalizedMessage();
 	} 
 }	
 	
@@ -52,21 +52,17 @@ public class TurmaAction extends HttpServlet{
 			incluir(request, response);
 		} catch (Exception ex){	
 			request.getRequestDispatcher("erro.jsp").forward(request, response);
-		} finally{
-			request.getRequestDispatcher("./ListarTurmas").forward(request, response);
-		}
+		} 
 	}
 	
 	@Override
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 		try {
 			new DisciplinaAction().listarDisciplinas(request, response);
 			listarTurmas(request, response);
 		} catch (Exception ex){	
-			request.getRequestDispatcher("erro.jsp").forward(request, response);
+			ex.getLocalizedMessage();
 		}
-		
 		finally {
 			String pathInfo = request.getRequestURI();
 			if (pathInfo.equals("/Universidade_LPII/InserirTurma")) {

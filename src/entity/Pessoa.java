@@ -1,5 +1,7 @@
 package entity;
 
+import java.util.List;
+
 public class Pessoa {
 	private Integer idPessoa;
 	private String nome;
@@ -12,13 +14,17 @@ public class Pessoa {
 	private String bairro;
 	private String complemento;
 	private String matricula;
+	private Turma turma;
+	private List<Turma> listaTurma;
 	
 	public Pessoa() {
 		// TODO Auto-generated constructor stub
 	}
+	
 
 	public Pessoa(Integer idPessoa, String nome, String cpf, String telefoneUm, String telefoneDois, String tipoPessoa,
-			String cep, String rua, String bairro, String complemento, String matricula) {
+			String cep, String rua, String bairro, String complemento, String matricula, Turma turma,
+			List<Turma> listaTurma) {
 		super();
 		this.idPessoa = idPessoa;
 		this.nome = nome;
@@ -31,7 +37,10 @@ public class Pessoa {
 		this.bairro = bairro;
 		this.complemento = complemento;
 		this.matricula = matricula;
+		this.turma = turma;
+		this.listaTurma = listaTurma;
 	}
+
 
 	public String getNome() {
 		return nome;
@@ -119,5 +128,21 @@ public class Pessoa {
 
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
+	}
+
+	public List<Turma> getListaTurma() {
+		return listaTurma;
+	}
+
+	public void setListaTurma(List<Turma> listaTurma) {
+		this.listaTurma = listaTurma;
+	}
+
+	public Turma getTurma() {
+		return turma;
+	}
+
+	public void setTurma(Turma turma) {
+		this.turma = turma;
 	}
 }

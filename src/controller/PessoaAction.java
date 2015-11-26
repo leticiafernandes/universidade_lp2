@@ -34,7 +34,7 @@ public class PessoaAction extends HttpServlet{
 			new PessoaDAO().incluir(pessoa);
 			
 		} catch (Exception e) {
-			request.getRequestDispatcher("erro.jsp").forward(request, response);
+			e.getLocalizedMessage();
 		}
 	}	
 	
@@ -44,11 +44,8 @@ public class PessoaAction extends HttpServlet{
 			List<Pessoa> listaPessoas = new PessoaDAO().listarTodos(); 
 			request.setAttribute("listaPessoas", listaPessoas);
 		} catch (Exception e) {
-			request.getRequestDispatcher("erro.jsp").forward(
-					request, response);
-		} finally {
-				request.getRequestDispatcher("busca.jsp").forward(request, response);						
-		}
+			request.getRequestDispatcher("erro.jsp").forward(request, response);
+		} 
 	}
 	
 	@Override
@@ -63,9 +60,19 @@ public class PessoaAction extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 		try {
+			new TurmaAction().listarTurmas(request, response);
 			listarPessoas(request, response);
 		} catch (Exception ex) {
 			ex.getMessage();
+		}
+		finally {
+			String pathInfo = request.getRequestURI();
+			if (pathInfo.equals("/Universidade_LPII/InserirPessoa")) {
+				request.getRequestDispatcher("cadastro_pessoa.jsp").forward(request, response);
+			}
+			else if (pathInfo.equals("/Universidade_LPII/ListarPessoa")) {
+				request.getRequestDispatcher("busca.jsp").forward(request, response);
+			}
 		}
 	}
 }
