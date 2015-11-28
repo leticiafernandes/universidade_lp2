@@ -115,15 +115,15 @@
 			    	   </div>
 		          </div>
                </div>
-	    		<h3>Turmas:</h3>
-	    		<hr>
-	    		<div class="row">
-	    			<div class="col-lg-6">
-	    				<div class="form-group">
-						</div>
-	    			</div>
-	    		</div>
-	    		<br>
+<!-- 	    		<h3>Turmas:</h3> -->
+<!-- 	    		<hr> -->
+<!-- 	    		<div class="row"> -->
+<!-- 	    			<div class="col-lg-6"> -->
+<!-- 	    				<div class="form-group"> -->
+<!-- 						</div> -->
+<!-- 	    			</div> -->
+<!-- 	    		</div> -->
+<!-- 	    		<br> -->
 	    		<div class="row">
                	   <div class="form-group">
 			    	   <div class="col-lg-12">

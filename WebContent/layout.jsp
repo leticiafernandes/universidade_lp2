@@ -15,7 +15,7 @@
 	      <li><a href="./InserirTurma">Cadastro Turmas</a></li>
 	      <li><a href="./ListarPessoa">Pesquisar Pessoa</a></li>
 	      <li><a href="./ListarTurmas">Pesquisar Turma</a></li>
-	      <li><a href="#">Quadro de Horários</a></li>
+<!-- 	      <li><a href="#">Quadro de Horários</a></li> -->
 	    </ul>
 	  </div>
 	</div>
